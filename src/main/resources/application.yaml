@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/mp?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+logging:
+  level:
+    com.itheima: debug
+  pattern:
+    dateformat: HH:mm:ss
+
+mybatis-plus:
+  type-aliases-package: com.itheima.domain.po
+  global-config:
+    db-config:
+      id-type: assign_id
+knife4j:
+  enable: true
+  openapi:
+    title: 接口文档
+    description: "自用接口文档"
+    concat: ljy
+    group:
+      default:
+        group-name: default
+        api-rule: package
+        api-rule-resources:
+          - com.itheima.mp.controller
